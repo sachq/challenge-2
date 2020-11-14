@@ -1,13 +1,12 @@
 {
   "name": "latcha-challenge-2",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Latcha coding challenge to create a CRUD app",
   "main": "index.ts",
   "scripts": {
     "start:dev": "nodemon dist/index.js",
     "build:dev": "tsc --watch --preserveWatchOutput",
-    "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\""
   },
   "keywords": [
     "latcha",
