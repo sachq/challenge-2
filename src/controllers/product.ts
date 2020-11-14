@@ -5,12 +5,17 @@ import { productModel } from '../models/product';
 export class ProductController {
   /**
    * Create a new Product
-   * by Product id, Request Parameter => `id`
+   * Request Body must contain Product
    * @param req Request Object
    * @param res Response Object
    */
   public create(req: Request, res: Response): void {
-    throw new Error("Method not implemented.");
+    const product = productModel.createProduct(req.body);
+    res.status(200)
+      .json({
+        description: 'New Product created',
+        content: product
+      })
   }
 
   /**
@@ -24,6 +29,7 @@ export class ProductController {
                                    : productModel.products;
     res.status(result ? 200 : 404)
        .json({
+         description: 'Success',
          content: result
         });
   }
@@ -48,6 +54,7 @@ export class ProductController {
     const id = +req.params.id;
     const isDeleted = productModel.deleteProduct(id);
     res.status(isDeleted ? 200 : 404).json({
+      description: 'Deleted',
       content: isDeleted ? `Resource ${id} deleted` : 'Resource not found!'
     })
   }
