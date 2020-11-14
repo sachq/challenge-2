@@ -22,6 +22,16 @@ class ProductModel {
    */
   getProduct = (id: number): Product | null => this._products.find(p => p.id === id) || null;
 
+  /**
+   * Delete Product by `id`
+   * @param id Unique ID of the Product
+   */
+  deleteProduct(id: number): boolean {
+    const itemIndex = this._products.findIndex(p => p.id === id);
+    if (itemIndex < 0) return false;
+    this._products.splice(itemIndex, 1);
+    return true;
+  }
 }
 
 const productModel = new ProductModel();
