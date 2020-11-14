@@ -40,6 +40,20 @@ $ npm run dev
       "country": "United States"
     }
   ```
+  **Response**
+  ```
+    {
+    "description": "New Product created",
+    "content": {
+        "name": "Quo Lux 2",
+        "cost": 992.52,
+        "currency": "Dollar",
+        "appVersion": "23.2.3",
+        "country": "United States",
+        "id": 11
+      }
+    }
+  ```
 
 * ### READ
   Read all Products or get a Product by `id`
@@ -65,6 +79,23 @@ $ npm run dev
       "country": "United States"
     }
   ```
+  **Response**
+  ```
+    [
+      {
+        "description": "New Product created",
+        "content": {
+          "name": "Quo Lux 2",
+          "cost": 992.52,
+          "currency": "Dollar",
+          "appVersion": "23.2.3",
+          "country": "United States",
+          "id": 11
+        }
+      },
+      ...
+    ]
+  ```
 
 * ### UPDATE
   Update a single Product, Provide only the necessary fields to update
@@ -88,6 +119,20 @@ $ npm run dev
       "appVersion": "0.49",
     }
   ```
+  **Response**
+  ```
+    {
+      "description": "Updated Product 1",
+      "content": {
+        "id": 1,
+        "name": "Quo Lux 2",
+        "cost": 10.1,
+        "currency": "Dollar",
+        "appVersion": "0.3.4",
+        "country": "United States"
+      }
+    }
+  ```
 
 * ### DELETE
   Delete a single Product
@@ -95,14 +140,12 @@ $ npm run dev
   ```
   DELETE /api/products/:id
   ```
-
-  **Request JSON**
+  **Response JSON**
   ```
     {
-      "name": "Transcof",
-      "cost": 10.10,
-      "currency": "Dollar",
-      "appVersion": "0.49",
-      "country": "United States"
+      "description": "Resource 2 deleted",
+      "content": {
+        "id": 2
+      }
     }
   ```
