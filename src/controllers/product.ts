@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 
 import { productModel } from '../models/product';
+import { Product } from '../models/product.interface';
 
 export class ProductController {
   /**
@@ -41,7 +42,16 @@ export class ProductController {
    * @param res Response Object
    */
   public update(req: Request, res: Response): void {
-    throw new Error("Method not implemented.");
+    const id = +req.params.id;
+    const updatedProduct = productModel.updateProduct(
+      id,
+      req.body as Product
+    );
+    res.status(updatedProduct ? 200 : 404)
+       .json({
+         description: updatedProduct ? `Updated Product ${id}` : 'Resource not found',
+         content: updatedProduct
+       });
   }
 
   /**
@@ -54,8 +64,8 @@ export class ProductController {
     const id = +req.params.id;
     const isDeleted = productModel.deleteProduct(id);
     res.status(isDeleted ? 200 : 404).json({
-      description: 'Deleted',
-      content: isDeleted ? `Resource ${id} deleted` : 'Resource not found!'
+      description: isDeleted ? `Resource ${id} deleted` : 'Resource not found!',
+      content: id
     })
   }
 }

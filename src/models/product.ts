@@ -30,6 +30,30 @@ class ProductModel {
   }
 
   /**
+   * Update an existing Product in
+   * Products table/array
+   * @param id Product id
+   * @param product Product to be updated
+   */
+  updateProduct(id: number, product: Product): Product|null {
+    const productIndex = this._products.findIndex(p => p.id === id);
+
+    // Return null if requested id cannot be found.
+    if (productIndex < 0) return null;
+
+    const productKeys = Object.keys(this._products[productIndex]);
+
+    // Loop through the Keys of user provided key-value pairs
+    for (const key of Object.keys(product)) {
+      // Update only if field exist
+      if (product[key] && productKeys.indexOf(key) >= 0) {
+        this._products[productIndex][key] = product[key];
+      }
+    }
+    return this._products[productIndex];
+  }
+
+  /**
    * Fetch a Product from Products
    * table/array using Product `id`.
    * @param id Unique ID of the Product
