@@ -65,7 +65,7 @@ export class ProductController {
     const isDeleted = productModel.deleteProduct(id);
     res.status(isDeleted ? 200 : 404).json({
       description: isDeleted ? `Resource ${id} deleted` : 'Resource not found!',
-      content: id
+      content: {id}
     })
   }
 }
