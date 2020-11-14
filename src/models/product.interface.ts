@@ -3,6 +3,6 @@ export interface Product {
   name: string;
   cost: number;
   currency: string;
-  app_version: string;
+  appVersion: string;
   country: string;
 }
