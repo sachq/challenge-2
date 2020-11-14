@@ -1,52 +1,26 @@
 import { Product } from './product.interface';
+import { PRODUCTS } from '../_data/products';
 
 class ProductModel {
-  public products: Product[];
+  private _products: Product[];
 
   constructor() {
-    this.products = [
-      {
-        id: 1,
-        name: "Transcof",
-        cost: "10.10",
-        currency: "Dollar",
-        app_version: "0.49",
-        country: "United States"
-      },
-      {
-        id: 2,
-        name: "Konklab",
-        cost: "58.10",
-        currency: "Dollar",
-        app_version: "7.3",
-        country: "United States"
-      },
-      {
-        id: 3,
-        name: "Cardify",
-        cost: "11.48",
-        currency: "Dollar",
-        app_version: "9.8",
-        country:" Canada"
-      },
-      {
-        id: 4,
-        name: "Temp",
-        cost: "10.97",
-        currency: "Dollar",
-        app_version: "0.9.7",
-        country: "United States"
-      },
-      {
-        id: 5,
-        name: "Stim",
-        cost: "20.50",
-        currency: "Dollar",
-        app_version: "0.7.3",
-        country:"United States"
-      }
-    ]
+    this._products = PRODUCTS;
   }
+
+  /**
+   * Get all Products
+   * @returns Product[]
+   */
+  get products(): Product[] {
+    return this._products;
+  }
+
+  /**
+   * Get Product by `id`
+   * @param id Unique ID of the Product
+   */
+  getProduct = (id: number): Product | null => this._products.find(p => p.id === id) || null;
 
 }
 
