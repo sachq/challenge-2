@@ -1,0 +1,7 @@
+# Exclude Directories
+node_modules
+dist
+.vscode
+
+# Exlude File formats
+.DS_Store
