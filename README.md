@@ -21,6 +21,12 @@ $ npm run dev
 
 ## Usage
 
+API to do basic CRUD Operations:
+* [CREATE](#create)
+* [READ](#read)
+* [UPDATE](#update)
+* [DELETE](#delete)
+
 * ### CREATE
   Create a new Product
 
