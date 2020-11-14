@@ -10,9 +10,13 @@ router.post('/', (req: Request, res: Response) => {
   productController.create(req, res);
 });
 
-// (R)ead all Products
-// or Get product by `id`
+// (R)ead - Get all Products
 router.get('/', (req: Request, res: Response) => {
+  productController.read(req, res);
+});
+
+// (R)ead - Get Product by id
+router.get('/:id', (req: Request, res: Response) => {
   productController.read(req, res);
 });
 
