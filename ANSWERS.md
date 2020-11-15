@@ -1,6 +1,6 @@
 # REST API Coding Test
  
- ## Requirements
+ ## Requirements Checklist
   - [x] Should handle all basic CRUD functions.
   - [x] Should include some sort of data source, be it in-memory or a database.
     * **in-memory**
@@ -32,5 +32,5 @@
     * Code needs to be tested and must have atleast 70-80% code-coverage.
     * Implement SQL or NoSQL database.
     * Implement User Authentication with help of in-memory session storage or JWT (JSON Web Tokens)
-      * I prefer 
+      * I prefer JWT as the session is not stored on the server. JWT is sent through the request headers; JWTs payload will have all the user information, which I'd see as one downside as the size can be larger than the session cookie.
     * Implement Logging, as it gives an understanding of the state of the application.
