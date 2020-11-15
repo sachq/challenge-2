@@ -146,7 +146,7 @@ API to do basic CRUD Operations:
   ```
   DELETE /api/products/:id
   ```
-  **Response JSON**
+  **Response**
   ```
     {
       "description": "Resource 2 deleted",
