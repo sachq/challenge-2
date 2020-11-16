@@ -116,7 +116,7 @@ API to do basic CRUD Operations:
   GET /api/products/:id
   ```
 
-  **Request JSON**
+  **Request Object(application/json)**
   ```
     {
       "name": "Transcof",
