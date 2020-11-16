@@ -77,7 +77,6 @@ API to do basic CRUD Operations:
   **Request Object (application/json)**
   ```
     {
-      "id": 1,
       "name": "Transcof",
       "cost": 10.10,
       "currency": "Dollar",
@@ -91,12 +90,12 @@ API to do basic CRUD Operations:
       {
         "description": "New Product created",
         "content": {
-          "name": "Quo Lux 2",
-          "cost": 992.52,
+          "id": 11,
+          "name": "Transcof",
+          "cost": 10.10,
           "currency": "Dollar",
-          "appVersion": "23.2.3",
-          "country": "United States",
-          "id": 11
+          "appVersion": "0.49",
+          "country": "United States"
         }
       },
       ...
@@ -122,7 +121,7 @@ API to do basic CRUD Operations:
       "name": "Transcof",
       "cost": 10.10,
       "currency": "Dollar",
-      "appVersion": "0.49",
+      "appVersion": "0.49"
     }
   ```
   **Response**
@@ -132,10 +131,10 @@ API to do basic CRUD Operations:
       "content": {
         "id": 1,
         "name": "Quo Lux 2",
-        "cost": 10.1,
+        "cost": 992.52,
         "currency": "Dollar",
-        "appVersion": "0.3.4",
-        "country": "United States"
+        "appVersion": "23.2.3",
+        "country": "United States",
       }
     }
   ```
