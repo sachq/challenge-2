@@ -19,6 +19,7 @@
   - [x] Explain any weaknesses or possible bugs you see in your code.
     
     **Weaknesses**:
+    * No encryption at this point, Configure to use SSL (HTTPS).
     * All data is stored in memory, which is not persistent. So, the amount of data that can be stored in memory is limited. At the same time, in-memory is better for storing user sessions.
     * User Authentication is not implemented, which means the data is public, and users can manipulate it without notice.
     * Not tested, which means it's an unstable codebase and very error-prone.
