@@ -1,7 +1,7 @@
 {
-  "name": "latcha-challenge-2",
+  "name": "challenge-2",
   "version": "0.0.1",
-  "description": "Latcha coding challenge to create a CRUD app",
+  "description": "Cding challenge to create a CRUD app",
   "main": "index.ts",
   "scripts": {
     "start:dev": "nodemon dist/index.js",
@@ -9,7 +9,6 @@
     "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\""
   },
   "keywords": [
-    "latcha",
     "challenge",
     "CRUD",
     "API",
